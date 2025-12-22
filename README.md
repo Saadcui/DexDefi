@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DeFi ERC20 + Liquidity Pool (Sepolia)
 
 A simple DeFi demo on **Sepolia**:
@@ -71,3 +72,6 @@ Users can claim rewards from the UI.
 ## License
 MIT
 
+=======
+# DexDefi
+>>>>>>> 725b2a1dea4cf13ceeba8789818e3dc6a902e92a
