@@ -1,0 +1,32 @@
+{
+  "name": "defi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "node": "npx hardhat node",
+    "deploy:localhost": "npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
+    "airdrop": "npx hardhat run scripts/airdrop.js --network localhost",
+    "airdrop:sepolia": "npx hardhat run scripts/airdrop.js --network sepolia",
+    "start:frontend": "npm --prefix frontend start",
+    "dev": "concurrently --kill-others-on-fail -n node,deploy,frontend -c blue,green,magenta \"node scripts/dev-node.js\" \"wait-on tcp:127.0.0.1:8545 && npx hardhat run scripts/deploy.js --network localhost\" \"wait-on file:frontend/.env file:frontend/src/contracts/SimplePool.json && npm --prefix frontend start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "concurrently": "^9.2.1",
+    "dotenv": "^16.3.1",
+    "hardhat": "^2.28.0",
+    "wait-on": "^8.0.5"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.3",
+    "ethers": "^6.16.0"
+  }
+  
+}
