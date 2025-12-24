@@ -17,7 +17,6 @@ const INITIAL_INPUTS = { addMtk: '', addUsdt: '', swapMtk: '', swapUsdt: '', rem
 
 function App() {
   const [account, setAccount] = useState(null);
-  const [provider, setProvider] = useState(null);
   const [contracts, setContracts] = useState({ pool: null, mtk: null, usdt: null });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState({ type: '', message: '' });
@@ -83,7 +82,6 @@ function App() {
       const browserProvider = new ethers.BrowserProvider(ethereum);
       const signer = await browserProvider.getSigner();
       const addr = await signer.getAddress();
-      setProvider(browserProvider);
       setAccount(addr);
       setContracts({
         pool: new ethers.Contract(ADDRESSES.pool, SimplePoolABI.abi, signer),
