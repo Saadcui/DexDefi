@@ -1,31 +1,17 @@
-# Node / React
-node_modules/
-frontend/node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Env (secrets)
+node_modules
 .env
-frontend/.env
-.env.local
-.env.*.local
-frontend/.env.local
-frontend/.env.*.local
 
-# Hardhat build output
-artifacts/
-cache/
-coverage/
-coverage.json
-typechain/
-typechain-types/
+# Hardhat files
+/cache
+/artifacts
 
-# React build output
-frontend/build/
+# TypeChain files
+/typechain
+/typechain-types
 
-# OS / IDE
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
+# solidity-coverage files
+/coverage
+/coverage.json
+
+# Hardhat Ignition default folder for deployments against a local node
+ignition/deployments/chain-31337
